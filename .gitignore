@@ -10,6 +10,9 @@ yelp-data
 yelp_checkin.csv
 yelp_tip.csv
 yelp_business.csv
+checkinsbyday.txt
+yelp_check.csv
+
 
 # Executables
 *.swf
