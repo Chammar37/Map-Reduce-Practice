@@ -10,8 +10,13 @@ yelp-data
 yelp_checkin.csv
 yelp_tip.csv
 yelp_business.csv
-checkinsbyday.txt
 yelp_check.csv
+checkinsbyday.txt
+bigrams.txt
+frequency-computation.txt
+inverted-index.txt
+trigrams.txt
+unigrams.txt
 
 
 # Executables
