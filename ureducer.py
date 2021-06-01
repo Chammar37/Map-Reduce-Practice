@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 import sys
-import re
 
 previous = None
 sum = 0
 
 input = open("unigrams.txt", 'w')
 for line in sys.stdin:
-    key,value = line.split( '\t' )
+    key,value =  line.split( '\t' )
 
     if key != previous:
         if previous is not None:

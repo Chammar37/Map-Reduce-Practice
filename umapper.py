@@ -1,24 +1,18 @@
 #!/usr/bin/python3
 import sys
 import re
-from nltk.tokenize import RegexpTokenizer
 
-# input = open("tester_3.txt", 'w')
+# input = open("tester_1.txt", 'w')
 
 for line in sys.stdin:
-    line = re.sub('"', '', line)
+    next(line)
 
-    words = line.split(",")
-    
-    tokenizer = RegexpTokenizer("[\w']+")
-    # # [\w']+
+    line = line.split(",")[0]
+    line = re.sub(r'^\W+|\W+$', '', line)
+    words = re.split(r'\W+', line)
 
-    comments = []
-    comments.append(tokenizer.tokenize(words[0]))
-
-    for words in comments:
-        for word in words:
-            # input.write( word.lower() + "\t1" + "\n")
-            print(str(word.lower()) + "\t1")
+    for word in words:
+        # input.write( word.lower() + "\t1" + "\n")
+        print(str(word.lower()) + "\t1")
 
 # input.close()

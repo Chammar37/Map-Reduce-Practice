@@ -4,7 +4,7 @@ import sys
 previous = None
 sum = 0
 
-input = open("bigrams.txt", 'w')
+input = open("trigrams.txt", 'w')
 for line in sys.stdin:
     key,value =  line.split( '\t' )
 
