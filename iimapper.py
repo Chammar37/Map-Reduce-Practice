@@ -1,26 +1,20 @@
 #!/usr/bin/python3
 import sys
-import re
 
-input = open("tester_5.txt", 'w')
+# input = open("tester_2.txt", 'w')
 
 data = sys.stdin
 next(data)
 
-for line in data:
+for line in data:  
+    bus_information = line.split(",")
+    categories_list = bus_information[len(bus_information)-1].split(';')
 
-    # print((line[12]))
+    for  category in categories_list:
+        if '\r\n' in category:
+             category = category.rstrip('\r\n')
+        
+        print(category + "\t" + bus_information[0])
+        # input.write(category + "\t" + bus_information[0] + "\n")
 
-    categories = line.split(",")
-    # busnies = category.split("'")
-    
-
-    # line = re.sub(r'^\W+|\W+$', '', line)
-    # words = re.split(r'\W+', line)
-
-    for category in categories:
-        # cat = category.split(';')[13]
-        input.write( str(category) + "\n")
-        # print(str(word.lower()) + "\t1")
-
-input.close()
+# input.close()
