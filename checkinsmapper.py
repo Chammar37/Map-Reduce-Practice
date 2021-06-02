@@ -1,12 +1,10 @@
 import sys
 import re
-import csv
+
 
 #yelp_business, day, #checkins
 
-test1= "hello1"
-test2 = "test2"
-test3 = 21
+
 
 for checkins in sys.stdin.readlines()[1:]:
     #Split every column (column is represented by a comma ,) too look at them seperately and remove unwanted
