@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import sys
+import csv
 
 # input = open("tester_2.txt", 'w')
 
-data = sys.stdin
+data = csv.reader(sys.stdin)
 next(data)
 
 for line in data:  

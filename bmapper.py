@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 import sys
 import re
+import csv
 
 # input = open("tester_2.txt", 'w')
 
-for line in sys.stdin:
+for line in csv.reader(sys.stdin):
     line = line.split(",")[0]
     line = re.sub(r'^\W+|\W+$', '', line)
     words = re.split(r'\W+', line)

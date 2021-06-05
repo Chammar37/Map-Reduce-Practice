@@ -5,7 +5,7 @@ previous_key = None
 bus_ids = []
 # categories_set = {'categories'} 
 
-input = open("inverted-index.txt", 'w')
+# input = open("inverted-index.txt", 'w')
 
 for line in sys.stdin:
     key,value =  line.split( '\t' )
@@ -15,7 +15,7 @@ for line in sys.stdin:
 
     if key != previous_key:
         if previous_key is not None:
-            input.write(previous_key + " " + ", ".join(bus_ids) + "\n\n")
+            print(previous_key + " " + ", ".join(bus_ids))
 
             bus_ids.clear()
             bus_ids.append(value)
@@ -24,7 +24,4 @@ for line in sys.stdin:
     if (key == previous_key and value not in bus_ids):
         bus_ids.append(value)
 
-# categories_set.remove('categories')
-# input.write(")
-
-input.close()
+# input.close()

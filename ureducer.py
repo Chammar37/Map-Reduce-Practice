@@ -1,20 +1,20 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 import sys
 
 previous = None
 sum = 0
 
-input = open("unigrams.txt", 'w')
+# input = open("unigrams.txt", 'w')
 for line in sys.stdin:
     key,value =  line.split( '\t' )
 
     if key != previous:
         if previous is not None:
-           input.write ( str( sum ) + '\t' + previous + '\n' )
+           print ( str( sum ) + '\t' + previous)
         previous = key
         sum = 0
    
     sum = sum + int(value)
 
-input.write( str(sum) + '\t' + previous + '\n')
-input.close()
+print( str(sum) + '\t' + previous)
+# input.close()
