@@ -1,24 +1,15 @@
+#!/usr/bin/python
 import sys
-import re
 import csv
 
 #yelp_business, day, #checkins
+data = csv.reader(sys.stdin.readlines()[1:])
+next(data)
 
-test1= "hello1"
-test2 = "test2"
-test3 = 21
-
-for checkins in sys.stdin.readlines()[1:]:
-    #Split every column (column is represented by a comma ,) too look at them seperately and remove unwanted
-    business_date = checkins.split(",")
+for checkins in data:
     #Because we split every column by a , we can now remove the unwanted second/last column
-    business_date.remove(business_date[2])
+    checkins.remove(checkins[2])
 
     #Now that second word is removed, we have less data filter through, saving time
     #Print what we want out for reference and reducer use
-
-    print("%s, %s, #%d" % (business_date[0], business_date[1], int(business_date[2])))
-
-
-
-
+    print(checkins[0] + ", " + checkins[1] + ", #" + checkins[2])
